@@ -34,7 +34,7 @@ In case you want to run your Django application from the terminal just run:
     
     $ psql
 
-5) Add issues 
+5) Add app issues 
     
     $ python manage.py startapp issues
     
