@@ -37,6 +37,6 @@ You can access application from 'https://djangodemo-pritimay.c9users.io/' and th
 
   Example.
   <p>
-    <img src="img/get_issues.tiff">
+    <img src="img/get_issues.png">
   <p>
 
