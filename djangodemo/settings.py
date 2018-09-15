@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'issues.apps.IssuesConfig'
+    'issues.apps.IssuesConfig',
+    'scrumboard'
 ]
 
 MIDDLEWARE_CLASSES = [

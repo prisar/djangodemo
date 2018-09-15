@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^', include('issues.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^issues/', include('issues.urls')),
+    url(r'^scrumboard/', include('scrumboard.urls'))
     ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
