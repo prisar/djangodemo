@@ -29,7 +29,7 @@ def detail(request, issue_id):
 
 
 # List of all issues or create a new one
-# /issue/1
+# /api/v1/issue/1
 class IssueList(APIView):
     
     def get(self, request):
