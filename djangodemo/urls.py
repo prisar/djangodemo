@@ -17,12 +17,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^', include('issues.urls')),
+    url(r'^$', TemplateView.as_view(template_name="scrumboard/home.html")),
     url(r'^admin/', admin.site.urls),
     url(r'^issues/', include('issues.urls')),
     url(r'^scrumboard/', include('scrumboard.urls'))
     ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+# urlpatterns = format_suffix_patterns(urlpatterns)
