@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 
@@ -16,49 +18,7 @@
     {% endverbatim %}
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            'use strict';
-
-            angular.module('scrumboard.demo', [])
-                .controller('ScrumboardController', ['$scope', ScrumboardController]);
-
-            function ScrumboardController($scope) {
-                $scope.add = function (list, title) {
-                    var card = {
-                        title: title
-                    };
-                    
-                    list.cards.push(card);
-                }
-                
-                $scope.data = [{
-                        name: 'Django demo',
-                        cards: [{
-                                title: 'Create Models'
-                            },
-                            {
-                                title: 'Create View'
-                            },
-                            {
-                                title: 'Migrate Database'
-                            }
-                        ]
-                    },
-                    {
-                        name: 'Angluar demo',
-                        cards: [{
-                                title: 'Write html'
-                            },
-                            {
-                                title: 'Write javascript'
-                            }
-                        ]
-                    }
-                ];
-            }
-        }());
-    </script>
+    <script type="text/javascript" src="{% static "scrumboard/scrumboard.js" %}"></script>
 </body>
 
 </html>
