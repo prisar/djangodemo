@@ -21,7 +21,6 @@ from rest_framework.urlpatterns import format_suffix_patterns
 urlpatterns = [
     url(r'^', include('issues.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^music/', include('music.urls')),
     url(r'^issues/', include('issues.urls')),
     ]
 

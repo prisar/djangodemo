@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'issues.apps.IssuesConfig',
-    'music.apps.MusicConfig',
+    'issues.apps.IssuesConfig'
 ]
 
 MIDDLEWARE_CLASSES = [

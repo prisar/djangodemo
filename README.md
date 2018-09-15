@@ -17,7 +17,7 @@ You can access application from 'https://djangodemo-pritimay.c9users.io/' and th
 
 4) Run Sql query
 
-    `$ psql`
+    `$ psql -h localhost -d djangodemo -U djangodemouser -W`
 
 5) Add app issues
 
@@ -35,8 +35,5 @@ You can access application from 'https://djangodemo-pritimay.c9users.io/' and th
 
     `$ sudo pip install rest_framework==3.6.4`
 
-  Example.
-  <p>
-    <img src="img/get_issues.png">
-  <p>
+
 
