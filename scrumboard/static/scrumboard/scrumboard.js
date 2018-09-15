@@ -2,40 +2,20 @@
     'use strict';
 
     angular.module('scrumboard.demo', [])
-        .controller('ScrumboardController', ['$scope', ScrumboardController]);
+        .controller('ScrumboardController', ['$scope', '$http', ScrumboardController]);
 
-    function ScrumboardController($scope) {
+    function ScrumboardController($scope, $http) {
         $scope.add = function(list, title) {
             var card = {
                 title: title
             };
 
             list.cards.push(card);
-        }
-
-        $scope.data = [{
-                name: 'Django demo',
-                cards: [{
-                        title: 'Create Models'
-                    },
-                    {
-                        title: 'Create View'
-                    },
-                    {
-                        title: 'Migrate Database'
-                    }
-                ]
-            },
-            {
-                name: 'Angluar demo',
-                cards: [{
-                        title: 'Write html'
-                    },
-                    {
-                        title: 'Write javascript'
-                    }
-                ]
-            }
-        ];
+        };
+        
+        $scope.data = [];
+        $http.get("/scrumboard/lists").then(function(reponse){
+            $scope.data = reponse.data;
+        });
     }
 }());
