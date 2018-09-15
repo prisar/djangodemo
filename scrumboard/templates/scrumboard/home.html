@@ -4,10 +4,15 @@
 <body ng-app="scrumboard.demo">
     {% verbatim %}
     <div ng-controller="ScrumboardController">
-        {{ person.name }} is {{ person.age }} years old.
+        <div ng-repeat="list in data">
+            <h3>{{ list.name }}</h3>
+            <ul>
+                <li ng-repeat="card in list.cards">{{ card.title }}</li>
+            </ul>
+        </div>
     </div>
     {% endverbatim %}
-    
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script type="text/javascript">
         (function() {
@@ -15,12 +20,32 @@
 
             angular.module('scrumboard.demo', [])
                 .controller('ScrumboardController', ['$scope', ScrumboardController]);
-                
-            function ScrumboardController($scope){
-                $scope.person = {
-                    name: 'Joe',
-                    age: 35
-                };
+
+            function ScrumboardController($scope) {
+                $scope.data = [{
+                        name: 'Django demo',
+                        cards: [{
+                                title: 'Create Models'
+                            },
+                            {
+                                title: 'Create View'
+                            },
+                            {
+                                title: 'Migrate Database'
+                            }
+                        ]
+                    },
+                    {
+                        name: 'Angluar demo',
+                        cards: [{
+                                title: 'Write html'
+                            },
+                            {
+                                title: 'Write javascript'
+                            }
+                        ]
+                    }
+                ];
             }
         }());
     </script>
