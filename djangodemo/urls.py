@@ -20,10 +20,11 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name="scrumboard/home.html")),
     url(r'^admin/', admin.site.urls),
     url(r'^issues/', include('issues.urls')),
-    url(r'^scrumboard/', include('scrumboard.urls'))
+    url(r'^$', TemplateView.as_view(template_name="scrumboard/home.html")),
+    url(r'^scrumboard/', include('scrumboard.urls')),
+    url(r'^auth_api/', include('auth_api.urls')),
     ]
 
 # urlpatterns = format_suffix_patterns(urlpatterns)
