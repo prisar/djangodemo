@@ -37,5 +37,9 @@
         $http.get("/scrumboard/lists/").then(function(reponse){
             $scope.data = reponse.data;
         });
+        
+        $scope.sortBy='story_points';
+        $scope.reverse = true;
+        $scope.showFilters = false;
     }
 }());
