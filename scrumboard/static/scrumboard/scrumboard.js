@@ -21,10 +21,10 @@
             
         };
         
-        // $scope.login = function () {
-        //     $http.post('/auth_api/login/',
-        //         {username: 'admin', password: 'Ril@1234'})
-        // }
+        $scope.login = function () {
+            $http.post('/auth_api/login/',
+                {username: 'admin', password: 'Ril@1234'})
+        }
         
         $scope.data = [];
         $http.get("/scrumboard/lists/").then(function(reponse){
