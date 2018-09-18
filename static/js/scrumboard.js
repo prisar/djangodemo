@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('scrumboard.demo', ['ngRoute'])
-        .controller('ScrumboardController', ['$scope', '$http', '$location', ScrumboardController]);
+        .controller('ScrumboardController', ['$scope', '$http', 'Login', ScrumboardController]);
 
-    function ScrumboardController($scope, $http, $location) {
+    function ScrumboardController($scope, $http, Login) {
         $scope.add = function(list, title) {
             var card = {
                 list: list.id,
@@ -21,18 +21,8 @@
             
         };
         
-        $scope.login = function () {
-            $http.post('/auth_api/login/',
-                {username: 'admin', password: 'Ril@1234'})
-        }
-        
-        $scope.logout = function () {
-            $http.get('/auth_api/logout/')
-                .then(function () {
-                    $location.url('/login');
-                });
-        };
-        
+        Login.redirectIfNotLoggedIn();
+        $scope.logout = Login.logout;
         $scope.data = [];
         $http.get("/scrumboard/lists/").then(function(reponse){
             $scope.data = reponse.data;
