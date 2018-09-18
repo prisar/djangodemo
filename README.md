@@ -35,5 +35,20 @@ You can access application from 'https://djangodemo-pritimay.c9users.io/' and th
 
     `$ sudo pip install rest_framework==3.6.4`
 
+9) Heroku url
 
+    https://vast-taiga-70981.herokuapp.com/
 
+10) push db
+
+    `heroku pg:push djangodemo DATABASE_URL --app vast-taiga-70981`
+
+11) Connect db
+
+    heroku pg:psql
+
+12) Export db url
+
+    export DATABASE_URL=postgres://$(whoami)
+
+13) 
